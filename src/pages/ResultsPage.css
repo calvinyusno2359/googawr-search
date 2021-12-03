@@ -1,0 +1,13 @@
+.ResultsPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ResultsPage__header {
+  display: flex;
+  justify-content: center;
+  padding: 30px 40px;
+  align-items: center;
+  /* min-width: 15vw; */
+}
