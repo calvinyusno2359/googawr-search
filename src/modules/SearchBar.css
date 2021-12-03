@@ -1,0 +1,17 @@
+.SearchBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.SearchBar input {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  height: 30px;
+  width: 100px;
+}
+
+.SearchBar button {
+  margin-left: 2px;
+}

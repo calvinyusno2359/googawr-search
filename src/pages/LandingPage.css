@@ -7,7 +7,7 @@
 .LandingPage__header {
   display: flex;
   justify-content: center;
-  padding: auto;
+  padding: 30px 40px;
   align-items: center;
   /* min-width: 15vw; */
 }
