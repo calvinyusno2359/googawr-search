@@ -1,0 +1,13 @@
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.LandingPage__header {
+  display: flex;
+  justify-content: center;
+  padding: auto;
+  align-items: center;
+  /* min-width: 15vw; */
+}
