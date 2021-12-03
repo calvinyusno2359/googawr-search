@@ -9,9 +9,16 @@
   align-items: center;
   border: 1px solid lightgray;
   height: 30px;
-  width: 100px;
+  width: 70vw;
+  max-width: 600px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .SearchBar button {
+  height: 35px;
+  width: 10vw;
+  max-width: 120px;
   margin-left: 2px;
 }
