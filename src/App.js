@@ -1,7 +1,15 @@
 import React from "react";
 
+import LandingPage from "./pages/LandingPage";
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <div className="App">
+      <h1>Hello World!</h1>
+      <LandingPage />
+      {/* ResultsPage */}
+    </div>
+  );
 }
 
 export default App;
