@@ -1,7 +1,8 @@
 import React from "react";
-import SearchBar from "../modules/SearchBar";
 
 import "./LandingPage.css";
+
+import SearchBar from "../modules/SearchBar";
 
 function LandingPage() {
   return (

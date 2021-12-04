@@ -12,7 +12,7 @@ import { actionType } from "./reducer";
 function SearchBar() {
   const emptyString = "";
 
-  const [{}, dispatch] = useSearchTerm();
+  const [_, dispatch] = useSearchTerm();
   const [searchInput, setSearchInput] = useState(emptyString);
   const navigate = useNavigate();
 

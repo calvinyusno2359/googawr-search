@@ -1,10 +1,13 @@
 import React from "react";
 
-import SearchBar from "../modules/SearchBar";
-
 import "./ResultsPage.css";
 
+import SearchBar from "../modules/SearchBar";
+import { useSearchTerm } from "../modules/SearchTermProvider";
+
 function ResultsPage() {
+  const [{ term }, dispath] = useSearchTerm();
+
   return (
     <div className="ResultsPage">
       <div className="ResultsPage__header">
@@ -13,7 +16,7 @@ function ResultsPage() {
         </div>
       </div>
       <div className="ResultsPage__body">
-        <p>Results here</p>
+        <p>{term}</p>
       </div>
     </div>
   );
