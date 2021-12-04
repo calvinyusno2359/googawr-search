@@ -4,24 +4,27 @@
 }
 
 .SearchBar input {
-  display: flex;
-  align-items: center;
   border: 1px solid lightgray;
   height: 40px;
-  width: 70vw;
-  max-width: 600px;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 70vw; /* Ensure when window shrinks, input box does not get too small */
+  max-width: 600px; /* Ensure when window expands, input box does not get too large */
+  border-radius: 5px; /* Ensure rounded corners */
+  padding-left: 10px; /* Ensure text typed inside input box does not start too close to the box border */
+  padding-right: 10px; /* Ensure text typed inside input box does not end too close to the box border */
 }
 
 .SearchBar button {
   height: 45px;
-  width: 10vw;
-  max-width: 120px;
-  margin-left: 2px;
+  width: fit-content; /* Ensure when window shrinks, SearchIcon and Search text still fits in button */
+  max-width: 120px; /* Ensure when window expands, button does not get too large */
+  margin-left: 2px; /* Ensure a tiny gap between SearchBar input and button */
   background-color: rgb(51, 119, 206);
   color: white;
   border-radius: 5px;
-  text-transform: inherit;
+  text-transform: inherit; /* Ensure Search text is not all capitalized, but instead follows capitalization of given text value */
+}
+
+.SearchBar button:hover {
+  background-color: rgb(13, 78, 139);
+  border: 1px solid rgb(51, 119, 206);
 }
