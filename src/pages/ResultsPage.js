@@ -6,7 +6,7 @@ import SearchBar from "../modules/SearchBar";
 import { useSearchTerm } from "../modules/SearchTermProvider";
 
 function ResultsPage() {
-  const [{ term }, dispath] = useSearchTerm();
+  const [{ term }, dispatch] = useSearchTerm();
 
   return (
     <div className="ResultsPage">
