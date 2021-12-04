@@ -14,16 +14,16 @@ function SearchBar() {
   };
 
   return (
-    <div className="SearchBar">
+    <form className="SearchBar">
       <input
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       />
-      <Button onClick={search} variant="outlined">
+      <Button type="submit" onClick={search} variant="outlined">
         <SearchIcon className="SearchBar__searchIcon" />
         Search
       </Button>
-    </div>
+    </form>
   );
 }
 
