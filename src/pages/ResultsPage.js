@@ -7,7 +7,6 @@ import "./ResultsPage.css";
 function ResultsPage() {
   return (
     <div className="ResultsPage">
-      {" "}
       <div className="ResultsPage__header">
         <div className="ResultsPage__SearchBar">
           <SearchBar />

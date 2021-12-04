@@ -1,7 +1,6 @@
 .SearchBar {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
 .SearchBar input {
@@ -20,9 +19,9 @@
   height: 45px;
   width: 10vw;
   max-width: 120px;
-  margin-left: 1px;
+  margin-left: 2px;
   background-color: rgb(51, 119, 206);
-  border: 1px solid white;
   color: white;
   border-radius: 5px;
+  text-transform: inherit;
 }
