@@ -6,11 +6,13 @@ import { Button } from "@material-ui/core";
 import "./SearchBar.css";
 
 function SearchBar() {
-  const [searchInput, setSearchInput] = useState("");
+  const emptyString = "";
+  const [searchInput, setSearchInput] = useState(emptyString);
 
   const search = (e) => {
     e.preventDefault();
-    console.log("Search button clicked.");
+    if (searchInput === emptyString) return;
+    console.log(`Search button clicked. Search input is ${searchInput}`);
   };
 
   return (
