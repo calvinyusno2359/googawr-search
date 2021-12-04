@@ -12,6 +12,7 @@ function LandingPage() {
           <SearchBar />
         </div>
       </div>
+
       <div className="LandingPage__body">
         {/* Empty body, just contains styling */}
       </div>

@@ -21,8 +21,34 @@ function ResultsPage() {
           <SearchBar currentSearchInput={term} />
         </div>
       </div>
+
       <div className="ResultsPage__body">
-        <p>{term}</p>
+        {queryResult && ( // if queryResult doesn't exist, don't render this
+          <div className="ResultsPage__results">
+            <p className="ResultsPage__count">
+              Showing {queryResult?.Page} - {queryResult?.PageSize} of{" "}
+              {queryResult?.TotalNumberOfResults} results
+            </p>
+
+            {queryResult?.ResultItems.map((resultItem) => (
+              <div className="ResultsPage__result">
+                <a href={resultItem.DocumentURI}>
+                  <h2 className="ResultsPage__documentTitle">
+                    {resultItem.DocumentTitle.Text}
+                  </h2>
+                </a>
+
+                <p className="ResultsPage__documentExcerpt">
+                  {resultItem.DocumentExcerpt.Text}
+                </p>
+
+                <p className="ResultsPage__documentURI">
+                  {resultItem.DocumentURI}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
