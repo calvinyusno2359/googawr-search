@@ -6,16 +6,19 @@ import SearchBar from "../modules/SearchBar";
 import { useSearchTerm } from "../modules/SearchTermProvider";
 import useSearchApi from "../modules/useSearchApi";
 
+import queryResult from "../queryResult";
+
 function ResultsPage() {
   const [{ term }] = useSearchTerm();
-  const { queryResult } = useSearchApi({ searchTerm: term });
+  // const { queryResult } = useSearchApi({ searchTerm: term });
+
   console.log("Query Results", queryResult);
 
   return (
     <div className="ResultsPage">
       <div className="ResultsPage__header">
         <div className="ResultsPage__SearchBar">
-          <SearchBar />
+          <SearchBar currentSearchInput={term} />
         </div>
       </div>
       <div className="ResultsPage__body">

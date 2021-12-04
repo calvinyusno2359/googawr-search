@@ -9,11 +9,11 @@ import "./SearchBar.css";
 import { useSearchTerm } from "./SearchTermProvider";
 import { actionType } from "./reducer";
 
-function SearchBar() {
+function SearchBar({ currentSearchInput = "" }) {
   const emptyString = "";
 
   const [, dispatch] = useSearchTerm();
-  const [searchInput, setSearchInput] = useState(emptyString);
+  const [searchInput, setSearchInput] = useState(currentSearchInput);
   const navigate = useNavigate();
 
   const search = (e) => {
