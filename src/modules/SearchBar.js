@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import SearchIcon from "@material-ui/icons/Search";
 import ClearIcon from "@material-ui/icons/Clear";
-import { Button } from "@material-ui/core";
+import { Button, MenuItem, MenuList } from "@material-ui/core";
 
 import "./SearchBar.css";
 
@@ -87,9 +87,9 @@ function SearchBar({ currentSearchInput = "" }) {
       </Button>
 
       {filteredSuggestions.length !== 0 && showFilteredSuggestions === true && (
-        <div className="SearchBar__suggestions">
+        <MenuList className="SearchBar__suggestions">
           {filteredSuggestions.map((suggestedTerm) => (
-            <p
+            <MenuItem
               key={suggestedTerm}
               className="SearchBar__suggestionItem"
               onClick={(e) => {
@@ -100,9 +100,9 @@ function SearchBar({ currentSearchInput = "" }) {
               }}
             >
               {highlightByMatch(suggestedTerm, searchInput)}
-            </p>
+            </MenuItem>
           ))}
-        </div>
+        </MenuList>
       )}
     </form>
   );
