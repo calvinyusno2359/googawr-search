@@ -1,5 +1,5 @@
 export const initialSearchTerm = {
-  term: null,
+  term: "",
 };
 
 export const actionType = {

@@ -31,7 +31,7 @@ function ResultsPage() {
             </p>
 
             {queryResult?.ResultItems.map((resultItem) => (
-              <div className="ResultsPage__result">
+              <div key={resultItem.DocumentId} className="ResultsPage__result">
                 <a href={resultItem.DocumentURI}>
                   <h2 className="ResultsPage__documentTitle">
                     {resultItem.DocumentTitle.Text}
