@@ -10,7 +10,7 @@ const useSuggestionApi = ({ searchTerm }) => {
       fetch(mockEndpoint)
         .then((suggestionsStream) => suggestionsStream.json())
         .then((suggestionsJson) => {
-          setSuggestions(suggestionsJson.suggestions.slice(0, 4));
+          setSuggestions(suggestionsJson.suggestions);
         });
     };
 

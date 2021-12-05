@@ -9,8 +9,9 @@ import "./SearchBar.css";
 
 import { useSearchTerm } from "./SearchTermProvider";
 import { actionType } from "./reducer";
-import useSuggestionApi from "./useSuggestionApi";
+import useSuggestionApi from "../hooks/useSuggestionApi";
 import suggestion from "../suggestion";
+import { highlightByMatch } from "../utils/highlighter";
 
 function SearchBar({ currentSearchInput = "" }) {
   const emptyString = "";
@@ -98,7 +99,7 @@ function SearchBar({ currentSearchInput = "" }) {
                 search(e);
               }}
             >
-              {suggestedTerm}
+              {highlightByMatch(suggestedTerm, searchInput)}
             </p>
           ))}
         </div>

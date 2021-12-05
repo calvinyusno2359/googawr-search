@@ -4,9 +4,10 @@ import "./ResultsPage.css";
 
 import SearchBar from "../modules/SearchBar";
 import { useSearchTerm } from "../modules/SearchTermProvider";
-import useSearchApi from "../modules/useSearchApi";
+import useSearchApi from "../hooks/useSearchApi";
 
 import queryResult from "../queryResult";
+import { highlightByOffset } from "../utils/highlighter";
 
 function ResultsPage() {
   const [{ term }] = useSearchTerm();
@@ -39,7 +40,10 @@ function ResultsPage() {
                 </a>
 
                 <p className="ResultsPage__documentExcerpt">
-                  {resultItem.DocumentExcerpt.Text}
+                  {highlightByOffset(
+                    resultItem.DocumentExcerpt.Text,
+                    resultItem.DocumentExcerpt.Highlights
+                  )}
                 </p>
 
                 <p className="ResultsPage__documentURI">
