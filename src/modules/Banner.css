@@ -2,8 +2,10 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 30px;
   background-color: rgb(240, 240, 240);
   width: 100%;
+  z-index: 200; /* Ensure banner is in front of page header */
 }
 
 .Banner__content {

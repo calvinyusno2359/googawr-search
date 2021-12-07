@@ -18,11 +18,11 @@ function ResultsPage() {
 
   return (
     <div className="ResultsPage">
-      <div className="ResultsPage__header">
-        <div className="ResultsPage__banner">
-          <Banner text="An Official Website." />
-        </div>
+      <div className="ResultsPage__banner">
+        <Banner text="An Official Website." />
+      </div>
 
+      <div className="ResultsPage__header">
         <div className="ResultsPage__SearchBar">
           <SearchBar currentSearchInput={term} />
         </div>
@@ -44,12 +44,12 @@ function ResultsPage() {
                   </h2>
                 </a>
 
-                <p className="ResultsPage__documentExcerpt">
+                <div className="ResultsPage__documentExcerpt">
                   {highlightByOffset(
                     resultItem.DocumentExcerpt.Text,
                     resultItem.DocumentExcerpt.Highlights
                   )}
-                </p>
+                </div>
 
                 <p className="ResultsPage__documentURI">
                   {resultItem.DocumentURI}

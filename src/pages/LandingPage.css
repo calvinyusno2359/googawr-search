@@ -13,9 +13,9 @@
   display: sticky;
   padding-top: 60px;
   padding-bottom: 30px;
+  top: 0px;
   width: 100%;
   border-bottom: 1px solid lightgrey;
-  box-shadow: 1px 3px 2px lightgrey; /* Ensure a blurry shadow behind the header area */
+  box-shadow: 0px 8px 2px lightgrey; /* Ensure a blurry shadow behind the header area */
   background-color: white; /* Ensure that header remains solid and no words are see through when scrolling down */
-  margin: auto;
 }
