@@ -1,9 +1,9 @@
-.SearchBar {
+.SearchBar__form {
   display: flex;
   justify-content: center;
 }
 
-.SearchBar input {
+.SearchBar__form input {
   border: 1px solid lightgray;
   height: 40px;
   width: 55%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
@@ -12,9 +12,9 @@
   padding-right: 40px; /* Ensure text typed inside input box does not overlap with X button */
 }
 
-.SearchBar button {
+.SearchBar__form button {
   height: 45px;
-  width: fit-content; /* Ensure when window shrinks, SearchIcon and Search text still fits in button */
+  width: 16%; /* Ensure when window shrinks, SearchIcon and Search text still fits in button */
   margin-left: 2px; /* Ensure a tiny gap between SearchBar input and button */
   background-color: rgb(51, 119, 206);
   color: white;
@@ -23,17 +23,30 @@
   padding: 0px 30px; /* Ensure size horizontal ratio between icon and text with button */
 }
 
-.SearchBar button:hover {
+.SearchBar__form button:hover {
   background-color: rgb(13, 78, 139);
   border: 1px solid rgb(51, 119, 206);
 }
 
 .SearchBar__clearButton {
   position: relative; /* Set an anchor point relative to order of elements SearchBar, X Button, Search Button */
-  top: 10px; /* Nudge upwards */
+  top: 10px; /* Nudge downwards */
 }
 
 .SearchBar__clearIcon {
   position: absolute; /* Adjust position of X Button relative to anchor */
   right: 12px; /* Always absolute distance apart from relative anchor point */
+}
+
+.SearchBar__suggestionMenu {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchBar__suggestions {
+  width: 59%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
+}
+
+.SearchBar__suggestionMenuOffset {
+  width: 16%; /* Offset value for suggestion menu */
 }

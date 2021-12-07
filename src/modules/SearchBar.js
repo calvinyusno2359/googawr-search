@@ -57,56 +57,61 @@ function SearchBar({ currentSearchInput = "" }) {
   };
 
   return (
-    <form className="SearchBar">
-      <input
-        type="text"
-        autoFocus
-        ref={inputBoxRef}
-        value={searchInput}
-        onChange={(e) => {
-          filterSuggestion(e);
-          setSearchInput(e.target.value);
-          setShowFilteredSuggestions(true);
-        }}
-      />
+    <div className="SearchBar">
+      <form className="SearchBar__form">
+        <input
+          type="text"
+          autoFocus
+          ref={inputBoxRef}
+          value={searchInput}
+          onChange={(e) => {
+            filterSuggestion(e);
+            setSearchInput(e.target.value);
+            setShowFilteredSuggestions(true);
+          }}
+        />
 
-      {searchInput.length > 1 && (
-        <div className="SearchBar__clearButton">
-          <ClearIcon
-            className="SearchBar__clearIcon"
-            onClick={() => {
-              setSearchInput(emptyString);
-              setShowFilteredSuggestions(false);
-              inputBoxRef.current.focus();
-            }}
-          />
-        </div>
-      )}
-
-      <Button type="submit" onClick={search} variant="outlined">
-        <SearchIcon className="SearchBar__searchIcon" />
-        Search
-      </Button>
-
-      {filteredSuggestions.length !== 0 && showFilteredSuggestions === true && (
-        <MenuList className="SearchBar__suggestions">
-          {filteredSuggestions.map((suggestedTerm) => (
-            <MenuItem
-              key={suggestedTerm}
-              className="SearchBar__suggestionItem"
-              onClick={(e) => {
-                setSearchInput(suggestedTerm);
+        {searchInput.length > 1 && (
+          <div className="SearchBar__clearButton">
+            <ClearIcon
+              className="SearchBar__clearIcon"
+              onClick={() => {
+                setSearchInput(emptyString);
                 setShowFilteredSuggestions(false);
                 inputBoxRef.current.focus();
-                search(e);
               }}
-            >
-              {highlightByMatch(suggestedTerm, searchInput)}
-            </MenuItem>
-          ))}
-        </MenuList>
-      )}
-    </form>
+            />
+          </div>
+        )}
+
+        <Button type="submit" onClick={search} variant="outlined">
+          <SearchIcon className="SearchBar__searchIcon" />
+          Search
+        </Button>
+      </form>
+
+      <div className="SearchBar__suggestionMenu">
+        {filteredSuggestions.length !== 0 && showFilteredSuggestions === true && (
+          <MenuList className="SearchBar__suggestions">
+            {filteredSuggestions.map((suggestedTerm) => (
+              <MenuItem
+                key={suggestedTerm}
+                className="SearchBar__suggestionItem"
+                onClick={(e) => {
+                  setSearchInput(suggestedTerm);
+                  setShowFilteredSuggestions(false);
+                  inputBoxRef.current.focus();
+                  search(e);
+                }}
+              >
+                {highlightByMatch(suggestedTerm, searchInput)}
+              </MenuItem>
+            ))}
+          </MenuList>
+        )}
+        <div className="SearchBar__suggestionMenuOffset" />
+      </div>
+    </div>
   );
 }
 
