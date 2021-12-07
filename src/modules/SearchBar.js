@@ -71,14 +71,16 @@ function SearchBar({ currentSearchInput = "" }) {
       />
 
       {searchInput.length > 1 && (
-        <ClearIcon
-          className="SearchBar__clearIcon"
-          onClick={() => {
-            setSearchInput(emptyString);
-            setShowFilteredSuggestions(false);
-            inputBoxRef.current.focus();
-          }}
-        />
+        <div className="SearchBar__clearButton">
+          <ClearIcon
+            className="SearchBar__clearIcon"
+            onClick={() => {
+              setSearchInput(emptyString);
+              setShowFilteredSuggestions(false);
+              inputBoxRef.current.focus();
+            }}
+          />
+        </div>
       )}
 
       <Button type="submit" onClick={search} variant="outlined">

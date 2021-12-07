@@ -8,6 +8,7 @@ import useSearchApi from "../hooks/useSearchApi";
 
 import queryResult from "../queryResult";
 import { highlightByOffset } from "../utils/highlighter";
+import Banner from "../modules/Banner";
 
 function ResultsPage() {
   const [{ term }] = useSearchTerm();
@@ -18,6 +19,10 @@ function ResultsPage() {
   return (
     <div className="ResultsPage">
       <div className="ResultsPage__header">
+        <div className="ResultsPage__banner">
+          <Banner text="An Official Website." />
+        </div>
+
         <div className="ResultsPage__SearchBar">
           <SearchBar currentSearchInput={term} />
         </div>

@@ -1,15 +1,21 @@
 .LandingPage {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Very IMPORTANT to always align center */
-  height: 100vh;
+  height: 100%;
+}
+
+.LandingPage__banner {
+  display: block;
+  width: 100%;
 }
 
 .LandingPage__header {
-  display: flex;
+  display: sticky;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  width: 100%;
   border-bottom: 1px solid lightgrey;
-  box-shadow: 1px 2px 2px lightgrey; /* Ensure a blurry shadow behind the header area */
-  justify-content: center;
-  padding: 30px 100vw; /* Ensure the box-shadow blur border goes across screen completely left to right */
+  box-shadow: 1px 3px 2px lightgrey; /* Ensure a blurry shadow behind the header area */
   background-color: white; /* Ensure that header remains solid and no words are see through when scrolling down */
+  margin: auto;
 }
