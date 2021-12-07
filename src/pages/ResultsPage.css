@@ -1,8 +1,14 @@
 .ResultsPage {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Very IMPORTANT to always align center */
-  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.ResultsPage__banner {
+  display: block;
+  width: 100%;
 }
 
 .ResultsPage__header {
