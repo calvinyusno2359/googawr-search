@@ -41,10 +41,11 @@
 .SearchBar__suggestionMenu {
   display: flex;
   justify-content: center;
+  gap: 18px;
 }
 
 .SearchBar__suggestions {
-  width: 59%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
+  width: 58%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
 }
 
 .SearchBar__suggestionMenuOffset {
