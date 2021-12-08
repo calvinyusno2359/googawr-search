@@ -6,7 +6,7 @@
 .SearchBar__form input {
   border: 1px solid lightgray;
   height: 40px;
-  width: 62%; /* Ensure when window shrinks, input box follows */
+  width: 60%; /* Ensure when window shrinks, input box follows */
   border-radius: 5px; /* Ensure rounded corners */
   padding-left: 20px; /* Ensure text typed inside input box does not start too close to the box border */
   padding-right: 40px; /* Ensure text typed inside input box does not overlap with X button */

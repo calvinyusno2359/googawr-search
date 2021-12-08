@@ -22,8 +22,9 @@
 
 .ResultsPage__body {
   margin-bottom: 15px;
-  padding-left: 13%;
-  max-width: 700px; /* Ensure when body expands, input box does not get too large */
+  margin-left: auto;
+  margin-right: auto;
+  width: 70vw;
 }
 
 .ResultsPage__results {
@@ -35,6 +36,7 @@
 .ResultsPage__result {
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 700px; /* Ensure when body expands, input box does not get too large */
 }
 
 .ResultsPage__count {
