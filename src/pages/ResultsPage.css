@@ -53,3 +53,9 @@
 .ResultsPage__highlightedText {
   font-weight: bold;
 }
+
+.ResultsPage__documentURI {
+  margin-top: 20px;
+  color: gray;
+  font-size: 12px;
+}
