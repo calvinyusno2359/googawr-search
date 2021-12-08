@@ -41,6 +41,10 @@
   margin-bottom: 40px;
 }
 
+.ResultsPage__result a {
+  text-decoration: none;
+}
+
 .ResultsPage__highlightedText {
   font-weight: bold;
 }
