@@ -7,8 +7,7 @@ import { Button, MenuItem, MenuList } from "@material-ui/core";
 
 import "./SearchBar.css";
 
-import { actionType } from "./reducer";
-import { useSearchTerm } from "./SearchTermProvider";
+import { useSearchTerm, actionType } from "./SearchTermProvider";
 import { highlightByMatch } from "../utils/highlighter";
 
 import useSuggestionApi from "../hooks/useSuggestionApi";
