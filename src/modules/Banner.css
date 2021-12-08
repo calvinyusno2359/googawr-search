@@ -10,6 +10,7 @@
 
 .Banner__content {
   margin-right: 63%; /* offset to the right maintaining the offset as it is resized */
+
   display: flex;
   flex-direction: row;
   justify-content: center;

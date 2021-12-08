@@ -1,7 +1,6 @@
 .ResultsPage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 100vh;
 }
 
@@ -14,7 +13,7 @@
   position: sticky; /* Ensure that the header containing SearchBar remains on top */
   padding-top: 60px;
   padding-bottom: 30px;
-  top: 8px;
+  top: 0px;
   z-index: 100; /* Ensure that the header containing SearchBar remains on forefront */
   border-bottom: 1px solid lightgrey;
   box-shadow: 0px 8px 2px lightgrey; /* Ensure a blurry shadow behind the header area */
@@ -22,23 +21,27 @@
 }
 
 .ResultsPage__body {
-  display: flex;
-  margin-top: 135%;
   margin-bottom: 15px;
   padding-left: 13%;
-  max-width: 750px; /* Ensure when body expands, input box does not get too large */
+  max-width: 700px; /* Ensure when body expands, input box does not get too large */
+}
+
+.ResultsPage__results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .ResultsPage__result {
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .ResultsPage__count {
   font-size: 16px;
   font-weight: bold;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .ResultsPage__result a {
