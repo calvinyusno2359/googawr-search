@@ -14,8 +14,6 @@ function ResultsPage() {
   const [{ term }] = useSearchTerm();
   // const { queryResult } = useSearchApi({ searchTerm: term });
 
-  console.log("Query Result", queryResult);
-
   return (
     <div className="ResultsPage">
       <div className="ResultsPage__banner">

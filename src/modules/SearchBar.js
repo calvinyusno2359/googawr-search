@@ -20,10 +20,9 @@ function SearchBar({ currentSearchInput = "" }) {
   const [searchInput, setSearchInput] = useState(currentSearchInput);
   const navigate = useNavigate();
 
-  const search = (e) => {
+  const search = (e, searchInput) => {
     e.preventDefault();
     if (searchInput === emptyString) return;
-    console.log(`Search button clicked. Search input is ${searchInput}`);
 
     dispatch({
       // store searchInput as a searchTerm in the SearchTermContext to be called at other places
@@ -42,7 +41,6 @@ function SearchBar({ currentSearchInput = "" }) {
 
   const filterSuggestion = (e) => {
     const searchInput = e.target.value;
-    console.log(e.target.value.length);
     const includesSearchInput = suggestions
       .filter((suggestedTerm) => {
         return suggestedTerm.toLowerCase().includes(searchInput.toLowerCase());
@@ -121,7 +119,7 @@ function SearchBar({ currentSearchInput = "" }) {
                   setSearchInput(suggestedTerm);
                   setShowFilteredSuggestions(false);
                   inputBoxRef.current.focus();
-                  search(e);
+                  search(e, suggestedTerm);
                 }}
               >
                 {highlightByMatch(suggestedTerm, searchInput)}
