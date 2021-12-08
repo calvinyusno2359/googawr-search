@@ -34,7 +34,7 @@ function SearchBar({ currentSearchInput = "" }) {
   };
 
   const { suggestions } = useSuggestionApi({ searchTerm: searchInput }); // comment this, if prefer to use local queryResult
-  // const { suggestions } = suggestion;                                  // then uncomment this
+  // const { suggestions } = suggestion;                                 // then uncomment this
 
   const inputBoxRef = React.createRef();
   const [showFilteredSuggestions, setShowFilteredSuggestions] = useState(false);
@@ -56,9 +56,10 @@ function SearchBar({ currentSearchInput = "" }) {
   };
 
   return (
-    <div className="SearchBar">
+    <div data-testid="SearchBar" className="SearchBar">
       <form className="SearchBar__form">
         <input
+          data-testid="SearchBar__input"
           type="text"
           autoFocus
           ref={inputBoxRef}
@@ -70,9 +71,13 @@ function SearchBar({ currentSearchInput = "" }) {
           }}
         />
 
-        {searchInput.length > 1 && (
-          <div className="SearchBar__clearButton">
+        {searchInput.length >= 1 && (
+          <div
+            data-testid="SearchBar__clearButton"
+            className="SearchBar__clearButton"
+          >
             <ClearIcon
+              data-testid="SearchBar__clearIcon"
               className="SearchBar__clearIcon"
               onClick={() => {
                 setSearchInput(emptyString);
@@ -89,9 +94,16 @@ function SearchBar({ currentSearchInput = "" }) {
         </Button>
       </form>
 
-      <div className="SearchBar__suggestionMenu">
+      <div
+        data-testid="SearchBar__suggestionMenu"
+        className="SearchBar__suggestionMenu"
+      >
         {filteredSuggestions.length !== 0 && showFilteredSuggestions === true && (
-          <MenuList className="SearchBar__suggestions" autoFocusItem>
+          <MenuList
+            data-testid="SearchBar__suggestions"
+            className="SearchBar__suggestions"
+            autoFocusItem
+          >
             {filteredSuggestions.map((suggestedTerm, idx) => (
               <MenuItem
                 key={idx}
