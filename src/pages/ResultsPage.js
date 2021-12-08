@@ -2,17 +2,17 @@ import React from "react";
 
 import "./ResultsPage.css";
 
+import Banner from "../modules/Banner";
 import SearchBar from "../modules/SearchBar";
 import { useSearchTerm } from "../modules/SearchTermProvider";
-import useSearchApi from "../hooks/useSearchApi";
-
-import queryResult from "../queryResult";
 import { highlightByOffset } from "../utils/highlighter";
-import Banner from "../modules/Banner";
+
+import useSearchApi from "../hooks/useSearchApi";
+// import queryResult from "../queryResult"; // uncomment this, if prefer not to send GET request
 
 function ResultsPage() {
   const [{ term }] = useSearchTerm();
-  // const { queryResult } = useSearchApi({ searchTerm: term });
+  const { queryResult } = useSearchApi({ searchTerm: term }); // comment this, if prefer to use local queryResult
 
   return (
     <div className="ResultsPage">

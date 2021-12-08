@@ -7,11 +7,12 @@ import { Button, MenuItem, MenuList } from "@material-ui/core";
 
 import "./SearchBar.css";
 
-import { useSearchTerm } from "./SearchTermProvider";
 import { actionType } from "./reducer";
-import useSuggestionApi from "../hooks/useSuggestionApi";
-import suggestion from "../suggestion";
+import { useSearchTerm } from "./SearchTermProvider";
 import { highlightByMatch } from "../utils/highlighter";
+
+import useSuggestionApi from "../hooks/useSuggestionApi";
+// import suggestion from "../suggestion"; // uncomment this, if prefer not to send GET request
 
 function SearchBar({ currentSearchInput = "" }) {
   const emptyString = "";
@@ -33,8 +34,9 @@ function SearchBar({ currentSearchInput = "" }) {
     navigate("/results"); // to ResultsPage at /results
   };
 
-  // const { suggestions } = useSuggestionApi({ searchTerm: searchInput });
-  const { suggestions } = suggestion;
+  const { suggestions } = useSuggestionApi({ searchTerm: searchInput }); // comment this, if prefer to use local queryResult
+  // const { suggestions } = suggestion;                                  // then uncomment this
+
   const inputBoxRef = React.createRef();
   const [showFilteredSuggestions, setShowFilteredSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -45,7 +47,7 @@ function SearchBar({ currentSearchInput = "" }) {
       .filter((suggestedTerm) => {
         return suggestedTerm.toLowerCase().includes(searchInput.toLowerCase());
       })
-      .slice(0, 6);
+      .slice(0, 6); // top 6 results only
 
     if (searchInput.length > 2) {
       setFilteredSuggestions(includesSearchInput);
