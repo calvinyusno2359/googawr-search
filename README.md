@@ -28,8 +28,8 @@ npm test
 
 1. Landing Page
 
-[Landing Page](LandingPage.png)
+![Landing Page](LandingPage.png)
 
 2. Results Page
 
-[Results Page](ResultsPage.png)
+![Results Page](ResultsPage.png)
