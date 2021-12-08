@@ -10,7 +10,7 @@
 }
 
 .LandingPage__header {
-  display: sticky;
+  position: sticky;
   padding-top: 60px;
   padding-bottom: 30px;
   top: 0px;
