@@ -56,6 +56,22 @@ function SearchBar({ currentSearchInput = "" }) {
     }
   };
 
+  const selectSuggestion = (e) => {
+    const UP_KEY = 38;
+    const DOWN_KEY = 40;
+
+    switch (e.keyCode) {
+      case UP_KEY: {
+        console.log("up");
+        return;
+      }
+      case DOWN_KEY: {
+        console.log("down");
+        return;
+      }
+    }
+  };
+
   return (
     <div className="SearchBar">
       <form className="SearchBar__form">
@@ -68,6 +84,9 @@ function SearchBar({ currentSearchInput = "" }) {
             filterSuggestion(e);
             setSearchInput(e.target.value);
             setShowFilteredSuggestions(true);
+          }}
+          onKeyDown={(e) => {
+            selectSuggestion(e);
           }}
         />
 
@@ -92,11 +111,12 @@ function SearchBar({ currentSearchInput = "" }) {
 
       <div className="SearchBar__suggestionMenu">
         {filteredSuggestions.length !== 0 && showFilteredSuggestions === true && (
-          <MenuList className="SearchBar__suggestions">
-            {filteredSuggestions.map((suggestedTerm) => (
+          <MenuList className="SearchBar__suggestions" autoFocusItem>
+            {filteredSuggestions.map((suggestedTerm, idx) => (
               <MenuItem
-                key={suggestedTerm}
-                className="SearchBar__suggestionItem"
+                key={idx}
+                value={suggestedTerm}
+                className={`SearchBar__suggestionItem-${idx}`}
                 onClick={(e) => {
                   setSearchInput(suggestedTerm);
                   setShowFilteredSuggestions(false);
