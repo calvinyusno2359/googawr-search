@@ -44,7 +44,7 @@
 }
 
 .SearchBar__suggestions {
-  width: 63%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
+  width: 60%; /* Ensure when window shrinks, input box follows and preserve same size ratio */
 }
 
 .SearchBar__suggestionMenuOffset {
