@@ -31,7 +31,7 @@ To run:
 
 ```
 0. cd googawr-search # or whatever directory name is used
-1. npm run
+1. npm start
 2. Open browser, nagivate to url: http://localhost:3000/
 
 # you should see the screens like the preview below
